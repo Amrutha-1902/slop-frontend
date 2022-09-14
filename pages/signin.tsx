@@ -22,7 +22,7 @@ function Signin() {
         <input className={style.input} type="password" placeholder="Password" />
         <br />
         <br />
-        <Link href="">
+        <Link href="/home">
           <button className={style.btn}>Sign In</button>
         </Link>
         <p>
