@@ -2,7 +2,9 @@ import Link from "next/link";
 import Router from "next/router";
 import React from "react";
 import { ValidationError } from "yup";
+import api from "../../util/api";
 import { signInFormValidation } from "../../util/dataValidation";
+import { AuthContext } from "../authProvider";
 
 type Prop = {
   style: {
@@ -15,6 +17,7 @@ type FormType = {
   password: string;
 };
 const SignInForm: React.FC<Prop> = ({ style }) => {
+  const authContext = React.useContext(AuthContext);
   const [formVal, setFormVal] = React.useState<FormType>({
     emailId: "",
     password: "",
@@ -32,7 +35,9 @@ const SignInForm: React.FC<Prop> = ({ style }) => {
   const onSubmit = async () => {
     if (!(await validate(formVal))) return;
     setErr("");
-    await Router.push("/home");
+    const res = await api.post("/auth/signin", formVal);
+    if (res.status === 200) authContext.setAuthState(res.data);
+    else setErr(res.data.message);
   };
   return (
     <div className={style.signin}>

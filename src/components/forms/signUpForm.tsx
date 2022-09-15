@@ -2,6 +2,7 @@ import Link from "next/link";
 import Router from "next/router";
 import React from "react";
 import { ValidationError } from "yup";
+import api from "../../util/api";
 import { signUpFormValidation } from "../../util/dataValidation";
 type Prop = {
   style: {
@@ -34,7 +35,9 @@ const SignUpForm: React.FC<Prop> = ({ style }) => {
   };
   const onSubmit = async () => {
     if (!(await validateData(formVal))) return;
-    await Router.push("/auth/signin");
+    const res = await api.post("/auth/signup", formVal);
+    if (res.status === 200) await Router.push("/auth/signin");
+    else setErr(res.data.message);
   };
   return (
     <div className={style.signup}>

@@ -2,8 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import style from "../../styles/home.module.css";
 import { StudentLifeLogo } from "../components/assets";
+import AuthComponent from "../components/layout/authComp";
 function Home() {
-  return (
+  const widget = (
     <div className="root">
       <div className={style.navbar}>
         <div className={style.logo}>
@@ -43,6 +44,7 @@ function Home() {
       </div>
     </div>
   );
+  return <AuthComponent child={widget} />;
 }
 
 export default Home;
