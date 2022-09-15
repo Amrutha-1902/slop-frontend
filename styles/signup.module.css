@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@1,200&family=Outfit:wght@400;700&display=swap");
 
 .signup {
-  margin: 70px;
   padding: 50px;
   display: inline-block;
   position: relative;
-  bottom: 500px;
-  left: 400px;
+  bottom: 470px;
+  left: 270px;
   background-color: #f6fbf9;
   border-radius: 40px;
   width: 400px;
@@ -37,17 +36,17 @@
 }
 
 .gitam {
-  display: inline-block;
   position: relative;
-  right: 1000px;
-  bottom: 420px;
+  bottom: 500px;
+  width: 200px;
+  float: left;
 }
 
 .student {
-  display: inline-block;
   position: relative;
-  bottom: 368px;
-  left: 133px;
+  bottom: 510px;
+  width: 100px;
+  float: right;
 }
 
 .box1 {
