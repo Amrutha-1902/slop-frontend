@@ -1,9 +1,10 @@
 // Home page has to design
 import React from "react";
 import Link from "next/link";
+import AuthComponent from "../components/layout/authComp";
 
 function Home() {
-  return (
+  const widget = (
     <div className="auth-background">
       Welcome to Student Life Portal
       <br />
@@ -16,6 +17,7 @@ function Home() {
       </Link>
     </div>
   );
+  return <AuthComponent child={widget} fromAuth={true} />;
 }
 
 export default Home;
