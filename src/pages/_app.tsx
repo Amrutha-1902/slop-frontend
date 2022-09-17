@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import "../../styles/globals.css";
+import 'bootstrap/dist/css/bootstrap.css'
 import AuthProvider from "../components/authProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
